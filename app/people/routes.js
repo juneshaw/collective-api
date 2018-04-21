@@ -12,4 +12,11 @@ router.get('/people/:id', (req, res, next) => {
   res.json(person)
 })
 
+router.post('/people', (req, res) => {
+  const newpost = db.posts.insert({
+    "name": req.body.name
+  })
+  res.json(newpost)
+})
+
 module.exports = router
